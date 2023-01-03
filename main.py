@@ -39,13 +39,13 @@ def bionic_reader(text):
     return formatted_text
 
 
-html_string = bionic_reader(st.session_state.name)
-
 st.title("Bionic Reader!")
 st.text_input("Enter Text", key="name")
 
+html_string = bionic_reader(st.session_state.name)
+
 st.markdown("## HTML Raw Output")
-st.write(f"{bionic_reader(st.session_state.name)}")
+st.write(f"{html_string}")
 
 st.markdown("## HTML Output")
 st.markdown(html_string, unsafe_allow_html=True)
