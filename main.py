@@ -40,4 +40,4 @@ def bionic_reader(text):
 
 st.title("Bionic Reader!")
 st.text_input("Enter Text", key="name")
-st.write(f"{bionic_reader(st.session_state.name)}")
+st.markdown(f"{bionic_reader(st.session_state.name)}")
