@@ -1,6 +1,7 @@
 import streamlit as st
 import re
 
+
 def bionic_reader(text):
     # Tokenize the text
     tokens = re.findall(r"\w+", text)
@@ -30,11 +31,12 @@ def bionic_reader(text):
                 num_non_bold_chars = 8
             else:
                 num_non_bold_chars = 9
-            formatted_text += f"<b>{token[:length-num_non_bold_chars]}</b>{token[length-num_non_bold_chars:]} "
+            formatted_text += f"**{token[:length-num_non_bold_chars]}**{token[length-num_non_bold_chars:]} "
         else:
             formatted_text += f"{token} "
 
     return formatted_text
+
 
 st.title("Bionic Reader!")
 st.text_input("Enter Text", key="name")
