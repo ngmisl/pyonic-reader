@@ -31,7 +31,7 @@ def bionic_reader(text):
                 num_non_bold_chars = 8
             else:
                 num_non_bold_chars = 9
-            formatted_text += f"**{token[:length-num_non_bold_chars]}**{token[length-num_non_bold_chars:]} "
+            formatted_text += f"<b>{token[:length-num_non_bold_chars]}</b>{token[length-num_non_bold_chars:]} "
         else:
             formatted_text += f"{token} "
 
@@ -40,4 +40,4 @@ def bionic_reader(text):
 
 st.title("Bionic Reader!")
 st.text_input("Enter Text", key="name")
-st.markdown(f"{bionic_reader(st.session_state.name)}")
+st.write(f"{bionic_reader(st.session_state.name)}")
